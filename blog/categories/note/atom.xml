@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[lmst]]></title>
-  <link href="lmst.me/atom.xml" rel="self"/>
+  <title><![CDATA[Category: note | lmst]]></title>
+  <link href="lmst.me/blog/categories/note/atom.xml" rel="self"/>
   <link href="lmst.me/"/>
   <updated>2012-10-09T15:11:24+08:00</updated>
   <id>lmst.me/</id>
@@ -52,9 +52,9 @@ git push origin source
 <code>source/_includes/custom/navigation.html</code></p>
 
 <pre><code>&lt;ul class="main-navigation"&gt;
-&lt;li&gt;&lt;a href="lmst.me/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="lmst.me/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="lmst.me/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 

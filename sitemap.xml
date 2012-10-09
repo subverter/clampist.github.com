@@ -1,15 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://lmst.me/blog/2012/10/09/hello-world/</loc>
-        <lastmod>2012-10-09T13:53:13+08:00</lastmod>
+        <loc>lmst.me/wonderful-octopress.html</loc>
+        <lastmod>2012-10-09T15:11:20+08:00</lastmod>
     </url>
     <url>
-        <loc>http://lmst.me/</loc>
-        <lastmod>2012-10-09T13:53:13+08:00</lastmod>
+        <loc>lmst.me/</loc>
+        <lastmod>2012-10-09T15:11:20+08:00</lastmod>
     </url>
     <url>
-        <loc>http://lmst.me/blog/archives/</loc>
-        <lastmod>2012-10-09T13:53:13+08:00</lastmod>
+        <loc>lmst.me/about/</loc>
+        <lastmod>2012-10-09T14:27:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>lmst.me/blog/archives/</loc>
+        <lastmod>2012-10-09T15:11:20+08:00</lastmod>
     </url>
 </urlset>
