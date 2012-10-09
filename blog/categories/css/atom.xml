@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[lmst.me]]></title>
-  <link href="http://lmst.me/atom.xml" rel="self"/>
+  <title><![CDATA[Category: CSS | lmst.me]]></title>
+  <link href="http://lmst.me/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://lmst.me/"/>
   <updated>2012-10-09T13:53:25+08:00</updated>
   <id>http://lmst.me/</id>
