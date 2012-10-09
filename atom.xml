@@ -4,7 +4,7 @@
   <title><![CDATA[lmst]]></title>
   <link href="lmst.me/atom.xml" rel="self"/>
   <link href="lmst.me/"/>
-  <updated>2012-10-09T15:11:24+08:00</updated>
+  <updated>2012-10-09T15:24:54+08:00</updated>
   <id>lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Wonderful Octopress]]></title>
-    <link href="lmst.me/wonderful-octopress.html"/>
+    <link href="lmst.me/blog/2012/10/wonderful-octopress.html"/>
     <updated>2012-10-09T14:37:00+08:00</updated>
-    <id>lmst.me/wonderful-octopress</id>
+    <id>lmst.me/blog/2012/10/wonderful-octopress</id>
     <content type="html"><![CDATA[<p>Today, I install Octopress, it is wonderful.<br/>
 I follow the official docs
 <a href="http://octopress.org/docs/setup/">setup</a>
