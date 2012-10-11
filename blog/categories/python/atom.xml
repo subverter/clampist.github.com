@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | lmst]]></title>
+  <link href="lmst.me/blog/categories/python/atom.xml" rel="self"/>
+  <link href="lmst.me/"/>
+  <updated>2012-10-11T13:30:09+08:00</updated>
+  <id>lmst.me/</id>
+  <author>
+    <name><![CDATA[clampist]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install OpenEXR for Python]]></title>
+    <link href="lmst.me/blog/2012/10/install-openexr-for-python.html"/>
+    <updated>2012-10-11T12:50:00+08:00</updated>
+    <id>lmst.me/blog/2012/10/install-openexr-for-python</id>
+    <content type="html"><![CDATA[<p>Using OpenEXR’s Python bindings we can make a simple image viewer.<br/>
+So, we should install OpenEXR first, following <a href="http://www.excamera.com/sphinx/articles-openexr.html">OpenEXR bindings for Python</a><br/>
+Make sure you have already installed OpenEXR's Prerequisite: Python 2.5+ and the OpenEXR C++ library(openexr).</p>
+
+<pre><code>wget http://excamera.com/files/OpenEXR-1.2.0.tar.gz
+
+tar zxvf OpenEXR-1.2.0.tar.gz
+
+cd OpenEXR-1.2.0
+
+(sudo python2 setup.py build)
+
+sudo python2 setup.py install
+</code></pre>
+
+<p>Then, you can follow <a href="http://opencv.willowgarage.com/documentation/python/cookbook.html#opencv-and-openexr">OpenCV and OpenEXR</a></p>
+
+<p>References: <a href="http://blog.csdn.net/ponder008/article/details/6592719">Pyhon how to install setup.py</a></p>
+]]></content>
+  </entry>
+  
+</feed>
