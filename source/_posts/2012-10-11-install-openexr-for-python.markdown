@@ -22,4 +22,4 @@ Make sure you have already installed OpenEXR's Prerequisite: Python 2.5+ and the
 
 Then, you can follow [OpenCV and OpenEXR](http://opencv.willowgarage.com/documentation/python/cookbook.html#opencv-and-openexr)
 
-References: [Pyhon how to install setup.py](http://blog.csdn.net/ponder008/article/details/6592719)
+References: [Python how to install setup.py](http://blog.csdn.net/ponder008/article/details/6592719)
