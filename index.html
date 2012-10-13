@@ -9,9 +9,8 @@
   <meta name="author" content="clampist">
 
   
-  <meta name="description" content="Using OpenEXR’s Python bindings we can make a simple image viewer.
-So, we should install OpenEXR first, following OpenEXR bindings for Python
-Make &hellip;">
+  <meta name="description" content="1.Load an image In [1]: import cv In [2]: im1 = cv.LoadImageM('foo.jpg') In [3]: print type(im1)
+&lt;type 'cv2.cv.cvmat'&gt; In [4]: im2 = cv. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +84,61 @@ Make &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/10/opencv-basis.html">OpenCV Basis</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-13T18:30:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>1.Load an image</p>
+
+<pre><code>In [1]: import cv
+
+In [2]: im1 = cv.LoadImageM('foo.jpg')
+
+In [3]: print type(im1)
+&lt;type 'cv2.cv.cvmat'&gt;
+
+In [4]: im2 = cv.LoadImage('foo.jpg')
+
+In [5]: print type(im2)
+&lt;type 'cv2.cv.iplimage'&gt;
+
+In [6]: cv.SaveImage('foo1.png', im1)
+
+In [7]: cv.SaveImage('foo2.png', im2)
+</code></pre>
+
+<p>可以看到<code>LoadImageM</code>得到的是一个<code>cvmat</code>图像，而<code>LoadImage</code>得到的是一个<code>iplimage</code>图像，两者均可以输出为图像</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/10/install-openexr-for-python.html">Install OpenEXR for Python</a></h1>
     
     
@@ -102,8 +156,6 @@ Make &hellip;">
 
 
 <time datetime="2012-10-11T12:50:00+08:00" pubdate data-updated="true">Oct 11<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/install-openexr-for-python.html#disqus_thread">Comments</a>
         
       </p>
     
@@ -157,8 +209,6 @@ sudo python2 setup.py install
 
 
 <time datetime="2012-10-09T14:37:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/wonderful-octopress.html#disqus_thread">Comments</a>
         
       </p>
     
@@ -224,6 +274,10 @@ git push origin source
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/opencv-basis.html">OpenCV Basis</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/10/install-openexr-for-python.html">Install OpenEXR for Python</a>

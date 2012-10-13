@@ -4,7 +4,7 @@
   <title><![CDATA[lmst]]></title>
   <link href="lmst.me/atom.xml" rel="self"/>
   <link href="lmst.me/"/>
-  <updated>2012-10-11T13:34:20+08:00</updated>
+  <updated>2012-10-13T20:43:09+08:00</updated>
   <id>lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenCV Basis]]></title>
+    <link href="lmst.me/blog/2012/10/opencv-basis.html"/>
+    <updated>2012-10-13T18:30:00+08:00</updated>
+    <id>lmst.me/blog/2012/10/opencv-basis</id>
+    <content type="html"><![CDATA[<p>1.Load an image</p>
+
+<pre><code>In [1]: import cv
+
+In [2]: im1 = cv.LoadImageM('foo.jpg')
+
+In [3]: print type(im1)
+&lt;type 'cv2.cv.cvmat'&gt;
+
+In [4]: im2 = cv.LoadImage('foo.jpg')
+
+In [5]: print type(im2)
+&lt;type 'cv2.cv.iplimage'&gt;
+
+In [6]: cv.SaveImage('foo1.png', im1)
+
+In [7]: cv.SaveImage('foo2.png', im2)
+</code></pre>
+
+<p>可以看到<code>LoadImageM</code>得到的是一个<code>cvmat</code>图像，而<code>LoadImage</code>得到的是一个<code>iplimage</code>图像，两者均可以输出为图像</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Install OpenEXR for Python]]></title>
