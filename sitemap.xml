@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>lmst.me/blog/2012/10/wonderful-octopress.html</loc>
+        <loc>http://lmst.me/blog/2012/10/wonderful-octopress.html</loc>
         <lastmod>2012-10-09T15:11:20+08:00</lastmod>
     </url>
     <url>
-        <loc>lmst.me/blog/2012/10/install-openexr-for-python.html</loc>
+        <loc>http://lmst.me/blog/2012/10/install-openexr-for-python.html</loc>
         <lastmod>2012-10-11T13:33:57+08:00</lastmod>
     </url>
     <url>
-        <loc>lmst.me/blog/2012/10/opencv-basis.html</loc>
+        <loc>http://lmst.me/blog/2012/10/opencv-basis.html</loc>
         <lastmod>2012-10-13T20:43:03+08:00</lastmod>
     </url>
     <url>
-        <loc>lmst.me/</loc>
+        <loc>http://lmst.me/</loc>
         <lastmod>2012-10-13T20:43:03+08:00</lastmod>
     </url>
     <url>
-        <loc>lmst.me/about/</loc>
+        <loc>http://lmst.me/about/</loc>
         <lastmod>2012-10-09T14:27:09+08:00</lastmod>
     </url>
     <url>
-        <loc>lmst.me/blog/archives/</loc>
+        <loc>http://lmst.me/blog/archives/</loc>
         <lastmod>2012-10-13T20:43:03+08:00</lastmod>
     </url>
 </urlset>

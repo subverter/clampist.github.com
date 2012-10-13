@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[lmst]]></title>
-  <link href="lmst.me/atom.xml" rel="self"/>
-  <link href="lmst.me/"/>
-  <updated>2012-10-13T20:43:09+08:00</updated>
-  <id>lmst.me/</id>
+  <link href="http://lmst.me/atom.xml" rel="self"/>
+  <link href="http://lmst.me/"/>
+  <updated>2012-10-13T21:10:59+08:00</updated>
+  <id>http://lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OpenCV Basis]]></title>
-    <link href="lmst.me/blog/2012/10/opencv-basis.html"/>
+    <link href="http://lmst.me/blog/2012/10/opencv-basis.html"/>
     <updated>2012-10-13T18:30:00+08:00</updated>
-    <id>lmst.me/blog/2012/10/opencv-basis</id>
+    <id>http://lmst.me/blog/2012/10/opencv-basis</id>
     <content type="html"><![CDATA[<p>1.Load an image</p>
 
 <pre><code>In [1]: import cv
@@ -43,9 +43,9 @@ In [7]: cv.SaveImage('foo2.png', im2)
   
   <entry>
     <title type="html"><![CDATA[Install OpenEXR for Python]]></title>
-    <link href="lmst.me/blog/2012/10/install-openexr-for-python.html"/>
+    <link href="http://lmst.me/blog/2012/10/install-openexr-for-python.html"/>
     <updated>2012-10-11T12:50:00+08:00</updated>
-    <id>lmst.me/blog/2012/10/install-openexr-for-python</id>
+    <id>http://lmst.me/blog/2012/10/install-openexr-for-python</id>
     <content type="html"><![CDATA[<p>Using OpenEXR’s Python bindings we can make a simple image viewer.<br/>
 So, we should install OpenEXR first, following <a href="http://www.excamera.com/sphinx/articles-openexr.html">OpenEXR bindings for Python</a><br/>
 Make sure you have already installed OpenEXR&#8217;s Prerequisite: Python 2.5+ and the OpenEXR C++ library(openexr).</p>
@@ -69,9 +69,9 @@ sudo python2 setup.py install
   
   <entry>
     <title type="html"><![CDATA[Wonderful Octopress]]></title>
-    <link href="lmst.me/blog/2012/10/wonderful-octopress.html"/>
+    <link href="http://lmst.me/blog/2012/10/wonderful-octopress.html"/>
     <updated>2012-10-09T14:37:00+08:00</updated>
-    <id>lmst.me/blog/2012/10/wonderful-octopress</id>
+    <id>http://lmst.me/blog/2012/10/wonderful-octopress</id>
     <content type="html"><![CDATA[<p>Today, I install Octopress, it is wonderful.<br/>
 I follow the official docs
 <a href="http://octopress.org/docs/setup/">setup</a>
@@ -106,9 +106,9 @@ git push origin source
 <code>source/_includes/custom/navigation.html</code></p>
 
 <pre><code>&lt;ul class="main-navigation"&gt;
-&lt;li&gt;&lt;a href="lmst.me/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="lmst.me/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="lmst.me/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://lmst.me/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://lmst.me/blog/archives"&gt;Archives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://lmst.me/about"&gt;About&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | lmst]]></title>
-  <link href="lmst.me/blog/categories/python/atom.xml" rel="self"/>
-  <link href="lmst.me/"/>
-  <updated>2012-10-13T20:43:09+08:00</updated>
-  <id>lmst.me/</id>
+  <link href="http://lmst.me/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://lmst.me/"/>
+  <updated>2012-10-13T21:10:59+08:00</updated>
+  <id>http://lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[OpenCV Basis]]></title>
-    <link href="lmst.me/blog/2012/10/opencv-basis.html"/>
+    <link href="http://lmst.me/blog/2012/10/opencv-basis.html"/>
     <updated>2012-10-13T18:30:00+08:00</updated>
-    <id>lmst.me/blog/2012/10/opencv-basis</id>
+    <id>http://lmst.me/blog/2012/10/opencv-basis</id>
     <content type="html"><![CDATA[<p>1.Load an image</p>
 
 <pre><code>In [1]: import cv
@@ -43,9 +43,9 @@ In [7]: cv.SaveImage('foo2.png', im2)
   
   <entry>
     <title type="html"><![CDATA[Install OpenEXR for Python]]></title>
-    <link href="lmst.me/blog/2012/10/install-openexr-for-python.html"/>
+    <link href="http://lmst.me/blog/2012/10/install-openexr-for-python.html"/>
     <updated>2012-10-11T12:50:00+08:00</updated>
-    <id>lmst.me/blog/2012/10/install-openexr-for-python</id>
+    <id>http://lmst.me/blog/2012/10/install-openexr-for-python</id>
     <content type="html"><![CDATA[<p>Using OpenEXR’s Python bindings we can make a simple image viewer.<br/>
 So, we should install OpenEXR first, following <a href="http://www.excamera.com/sphinx/articles-openexr.html">OpenEXR bindings for Python</a><br/>
 Make sure you have already installed OpenEXR's Prerequisite: Python 2.5+ and the OpenEXR C++ library(openexr).</p>
