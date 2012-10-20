@@ -2,7 +2,8 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: lmst.me
+url: http://lmst.me
+# 这个前面的http://一定不能少，不然Disqus会坏掉
 title: lmst
 subtitle: Web Arch Python Record
 author: clampist
@@ -91,7 +92,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: lmst
-disqus_show_comment_count: true
+disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: UA-21898820-1
