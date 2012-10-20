@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "python virtualenv wrapper and pip"
+title: "Python Virtualenv Wrapper and Pip"
 date: 2012-10-20 14:33
 comments: true
 categories: Python
