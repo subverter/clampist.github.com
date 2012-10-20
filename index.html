@@ -9,8 +9,7 @@
   <meta name="author" content="clampist">
 
   
-  <meta name="description" content="1.Load an image In [1]: import cv In [2]: im1 = cv.LoadImageM('foo.jpg') In [3]: print type(im1)
-&lt;type 'cv2.cv.cvmat'&gt; In [4]: im2 = cv. &hellip;">
+  <meta name="description" content="1.Install Arch 下默认是 python3, 而如果强制用软链接改为 python2 的话，一些程序会有问题的，之前都是小脚本，所以手动把第一行改为 #!/usr/bin/env python2 或者 #!/usr/bin/python2 就行，现在要做 GAE &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +83,152 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/10/python-virtualenv-wrapper-and-pip.html">Python Virtualenv Wrapper and Pip</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-20T14:33:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>1.Install</h2>
+
+<p>Arch 下默认是 <code>python3</code>, 而如果强制用软链接改为 <code>python2</code> 的话，一些程序会有问题的，之前都是小脚本，所以手动把第一行改为 <code>#!/usr/bin/env python2</code> 或者 <code>#!/usr/bin/python2</code> 就行，现在要做 GAE 发现手动改了好多还是不行，于是便有了 Python virtualenv 等。</p>
+
+<p>Install virtualenv virtualenvwrapper and pip</p>
+
+<pre><code># pacman -S python2-virtualenv
+# pacman -S python2-virtualenvwrapper
+# pacman -S python2-pip
+</code></pre>
+
+<h2>2.Configure</h2>
+
+<p>Add the following lines to the <code>~/.bashrc</code> or <code>~/.zshrc</code></p>
+
+<pre><code>export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p>Then run</p>
+
+<pre><code>mkdir $WORKON_HOME
+source ~/.zshrc   # or ~/.bashrc
+</code></pre>
+
+<p>Or manually perform the following operation</p>
+
+<pre><code>export WORKON_HOME=~/.virtualenvs
+mkdir $WORKON_HOME
+source /usr/bin/virtualenvwrapper.sh
+</code></pre>
+
+<h2>3.Basic Usage</h2>
+
+<p>Create a virtualenv:</p>
+
+<pre><code>mkvirtualenv -p python2.7 --no-site-packages hello
+</code></pre>
+
+<p>We can see:</p>
+
+<pre><code>Running virtualenv with interpreter /usr/bin/python2.7
+New python executable in hello/bin/python2.7
+Also creating executable in hello/bin/python
+Installing setuptools............................done.
+Installing pip...............done.
+</code></pre>
+
+<p>We can see them in <code>~/.virtualenvs/hello</code>
+and find <code>(hello)</code> in the Prompt. It means we already activate the virtualenv.
+Then we could do something we want, like install some package inside the virtualenv (like, Django):</p>
+
+<pre><code>(hello)$ pip install django
+</code></pre>
+
+<p>We could use <code>deactivate</code> to leave the virtualenv.</p>
+
+<p>But we also could virtualenv any directory you want, for instance:</p>
+
+<pre><code>cd ~/gae
+mkdir test
+virtualenv2 -p python2.7 --no-site-packages test
+</code></pre>
+
+<p>then we could activate the virtualenv.</p>
+
+<pre><code>cd test
+source bin/activate
+</code></pre>
+
+<p>then we could do something we want, like install some package inside the virtualenv (like, Django):</p>
+
+<pre><code>(hello)$ pip install django
+</code></pre>
+
+<p>Finally, we could similarly use <code>deactivate</code> to leave the virtualenv.</p>
+
+<h2>4.Virtualenvwrapper</h2>
+
+<p>We could use Virtualenvwrapper activate a virtualenv:</p>
+
+<pre><code>$ workon hello
+</code></pre>
+
+<p>The <code>hello</code> is a virtualenv directory in the <code>$WORKON_HOME</code>(~/.virtualenvs).
+所以我们可以在 <code>$WORKON_HOME</code>(~/.virtualenvs) 中做个软链接，然后就能用 <code>workon</code> 命令激活</p>
+
+<pre><code>cd ~/.virtualenvs
+ln -s ~/gae/test .
+workon test
+</code></pre>
+
+<p>如果频繁切换，容易搞混的话，可以用下面命令来查看自己所处的环境</p>
+
+<pre><code>which pip
+which python
+which python2
+which python3   # and so on
+</code></pre>
+
+<h2>5.Summary</h2>
+
+<p>一般来说，一个虚拟环境就放在 <code>$WORKON_HOME</code> 就好了，不要和要做的项目工程的源码放在一起，配置好之后就相当于一个稳定的环境了，用的时候切换过去就行了。</p>
+
+<h2>See Also</h2>
+
+<p><a href="https://wiki.archlinux.org/index.php/Virtualenv">Python VirtualEnv</a></p>
+
+<p><a href="http://www.v2ex.com/t/42760">VirtualEnv 和Pip 构建Python的虚拟工作环境</a></p>
+
+<p><a href="http://blackgu.blogbus.com/logs/170014223.html">Python开发工具virtualenv的使用 - [Python]</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/10/opencv-basis.html">OpenCV Basis</a></h1>
     
     
@@ -107,7 +252,7 @@
   </header>
 
 
-  <div class="entry-content"><p>1.Load an image</p>
+  <div class="entry-content"><h2>1.Load an image</h2>
 
 <pre><code>In [1]: import cv
 
@@ -127,6 +272,47 @@ In [7]: cv.SaveImage('foo2.png', im2)
 </code></pre>
 
 <p>可以看到<code>LoadImageM</code>得到的是一个<code>cvmat</code>图像，而<code>LoadImage</code>得到的是一个<code>iplimage</code>图像，两者均可以输出为图像</p>
+
+<h2>2.About DPI PPI and Resolution(分辨率)</h2>
+
+<ul>
+<li>DPI 是指每一英吋长度中，取样或可显示或输出点的数目，英文为 Dots Per Inch（点每英寸）。主要说的是打印机。</li>
+<li>PPI 是指每英寸的长度中所具有的像素，英文为 Pixels Per Inch（像素每英寸）。主要说的是显示器。</li>
+</ul>
+
+
+<p><img class="left" src="http://upload.wikimedia.org/wikipedia/commons/3/3d/DPI_and_PPI.png"></p>
+
+<ul>
+<li>分辨率(resolution)则泛指量测或显示系统对细节的分辨能力。</li>
+<li>由分辨率中X或Y轴的数字除以该轴的长度(英寸)，可得该轴的像素每英寸密度。一般的像素是方形或接近方形，X与Y轴像素密度相同，但也有不相同的显示器。</li>
+<li>同样分辨率的一张图像，在越小的屏幕上显示或者在越小的尺寸上打印出来，PPI或者DPI就越高。看起来就越清晰，越细腻。</li>
+<li>也就是说，如果想要把一张大小为 800X600 且 PPI/DPI 为 200 图像，降低到 100 PPI/DPI ，在显示或打印<strong>尺寸不变</strong>的情况下，只需把大小变为原来的一半 400X300（假设X与Y轴像素密度相同）。</li>
+<li>同时也可以说，单纯的高分辨率与 DPI/PPI 是扯不上关系的，只有高分辨率的图像体现在具体尺寸上，才能说它的 DPI/PPI。一张 2880x1800 图像在 15.4 英寸的显示器上会有很高的 PPI， 但在 42 英寸的显示器上 PPI 则很低。</li>
+</ul>
+
+
+<p>以下<code>halvedimage.py</code>是将图像大小变为一半</p>
+
+<pre><code>#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
+import cv
+import sys
+
+def main(img):
+    im = cv.LoadImageM(img)
+    halved = cv.CreateMat(im.rows / 2, im.cols / 2, cv.CV_8UC3)
+    cv.Resize(im, halved)
+    cv.SaveImage('halved_'+img, halved)
+
+if __name__=='__main__':
+    try:
+        main(sys.argv[1])
+    except IndexError:
+        print '''Usage:
+        halvedimage.py image.file'''
+</code></pre>
 </div>
   
   
@@ -177,7 +363,7 @@ cd OpenEXR-1.2.0
 sudo python2 setup.py install
 </code></pre>
 
-<p>Then, you can follow <a href="http://opencv.willowgarage.com/documentation/python/cookbook.html#opencv-and-openexr">OpenCV and OpenEXR</a></p>
+<p>Then, we can follow <a href="http://opencv.willowgarage.com/documentation/python/cookbook.html#opencv-and-openexr">OpenCV and OpenEXR</a></p>
 
 <p>References: <a href="http://blog.csdn.net/ponder008/article/details/6592719">Python how to install setup.py</a></p>
 </div>
@@ -274,6 +460,10 @@ git push origin source
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/python-virtualenv-wrapper-and-pip.html">python virtualenv wrapper and pip</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/10/opencv-basis.html">OpenCV Basis</a>
