@@ -4,7 +4,7 @@
   <title><![CDATA[lmst]]></title>
   <link href="http://lmst.me/atom.xml" rel="self"/>
   <link href="http://lmst.me/"/>
-  <updated>2012-10-20T16:01:18+08:00</updated>
+  <updated>2012-10-20T16:04:46+08:00</updated>
   <id>http://lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[python virtualenv wrapper and pip]]></title>
+    <title type="html"><![CDATA[Python Virtualenv Wrapper and Pip]]></title>
     <link href="http://lmst.me/blog/2012/10/python-virtualenv-wrapper-and-pip.html"/>
     <updated>2012-10-20T14:33:00+08:00</updated>
     <id>http://lmst.me/blog/2012/10/python-virtualenv-wrapper-and-pip</id>
