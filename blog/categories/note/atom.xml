@@ -4,7 +4,7 @@
   <title><![CDATA[Category: note | lmst]]></title>
   <link href="http://lmst.me/blog/categories/note/atom.xml" rel="self"/>
   <link href="http://lmst.me/"/>
-  <updated>2012-10-20T16:04:46+08:00</updated>
+  <updated>2012-11-09T12:56:40+08:00</updated>
   <id>http://lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
@@ -25,8 +25,8 @@ I follow the official docs
 <a href="http://octopress.org/docs/configuring/">config</a>
 <a href="http://octopress.org/docs/blogging/">blogging</a><br/>
 and the other two blogs:
-<a href="http://jokry.com/blog/2012/03/08/octopress/">jokry.com</a>
-<a href="http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/">blog.javachen.com</a></p>
+<a href="http://jokry.com/2012/03/08/octopress/">Octopress介绍与安装</a>
+<a href="http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/">使用Octopress将博客从wordpress迁移到GitHub上</a></p>
 
 <p>The following command is in common use(in the project root directory):</p>
 

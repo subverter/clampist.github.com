@@ -4,7 +4,7 @@
   <title><![CDATA[lmst]]></title>
   <link href="http://lmst.me/atom.xml" rel="self"/>
   <link href="http://lmst.me/"/>
-  <updated>2012-10-20T16:04:46+08:00</updated>
+  <updated>2012-11-09T12:56:40+08:00</updated>
   <id>http://lmst.me/</id>
   <author>
     <name><![CDATA[clampist]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Count IP Address Appears Most in Log File]]></title>
+    <link href="http://lmst.me/blog/2012/11/count-ip-address-appears-most-in-log-file.html"/>
+    <updated>2012-11-09T10:32:00+08:00</updated>
+    <id>http://lmst.me/blog/2012/11/count-ip-address-appears-most-in-log-file</id>
+    <content type="html"><![CDATA[<h2>1.Problem</h2>
+
+<p>之前做运维的笔试题，有一道很经典的统计日志文件中出现最多的 IP 地址及次数的题。其日志格式为</p>
+
+<pre><code>122.224.6.43 - - [30/Oct/2012:21:29:42 +0800] "GET /phpMyAdmin/scripts/setup.php HTTP/1.1" 404 162 "-" "ZmEu"
+122.224.6.43 - - [30/Oct/2012:21:29:42 +0800] "GET /MyAdmin/scripts/setup.php HTTP/1.1" 404 162 "-" "ZmEu"
+122.224.6.43 - - [30/Oct/2012:21:29:42 +0800] "GET /pma/scripts/setup.php HTTP/1.1" 404 162 "-" "ZmEu"
+122.224.6.43 - - [30/Oct/2012:21:29:42 +0800] "GET /myadmin/scripts/setup.php HTTP/1.1" 404 162 "-" "ZmEu"
+58.251.60.248 - - [30/Oct/2012:23:05:46 +0800] "GET http://www.baidu.com/ HTTP/1.1" 200 612 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; QQDownload 551; .NET CLR 2.0.50727; CIBA)"
+58.251.60.248 - - [30/Oct/2012:23:06:37 +0800] "" 400 0 "-" "-"
+</code></pre>
+
+<p>这是 <code>nginx</code> 日志 <code>/var/log/nginx/access.log</code> 中的一个片段。</p>
+
+<h2>2.用 Shell 解决</h2>
+
+<h5>思路一： awk 取出第一列，然后利用 sort -u 将 IP unique 化输出到文件，再从文件按行读入再计数显示出来</h5>
+
+<p>具体如下：</p>
+
+<pre><code>cd /var/log/nginx
+
+sudo zcat access.log.1.gz | awk '{print $1}' | sort -u &gt; /tmp/ip
+
+while read line; do
+    let a++
+    echo `sudo zcat access.log.1.gz | awk '{print $1}' | grep $line -c` $line
+done &lt; /tmp/ip
+
+rm /tmp/ip
+</code></pre>
+
+<p>其中用的是 <code>grep</code> 计数的，而且会产生临时文件又需要手动删除，致命点是只能显示出各 IP 次数，但不能列出最大次数及 IP。其中为 access.log.1.gz 文件则用 <code>zcat</code>, 如果是普通 access.log 文件则用 <code>cat</code>.</p>
+
+<h5>思路一（改进）：利用 <code>helpdoc</code> 则可避免使用临时文件</h5>
+
+<pre><code>cd /var/log/nginx
+
+while read line; do
+    let a++
+    echo `sudo zcat access.log.1.gz | awk '{print $1}' | grep $line -c` $line
+done &lt;&lt; EOF
+
+`sudo zcat access.log.1.gz | awk '{print $1}' | sort -u`
+
+EOF
+</code></pre>
+
+<p>这里用到 here document, here document 往往用于需要输出一大段文本的地方，例如脚本的 help 函数。两个 EOF 之间产生的内容用于上面循环的输入。</p>
+
+<h5>思路二：上面所用的 unique 化和 count 方法太拙劣，寻求其他的便捷方法，果然找到了</h5>
+
+<p>之前用了循环将问题复杂化了，用 <code>uniq</code> 这个命令会很 cool.</p>
+
+<pre><code>cd /var/log/nginx
+
+sudo cat access.log | awk '{print $1}'| sort | uniq -c | sort -nr | head -1
+</code></pre>
+
+<p>其中 <code>uniq -c</code> 就是 unique 化 AND count, <code>sort -n</code> 表示把字符串中的数字当做数字比较，<code>-r</code> 为倒序。</p>
+
+<p>注意：这个方法可能只能显示那些相同次数的 IP 的最前面的一个，所以适当加大为 <code>head -3</code> 或 <code>head -5</code> 等适可而止，无需再去判断那些相同次数来增加复杂性，这样很好记的。</p>
+
+<h2>3.用 Python 来做</h2>
+
+<p>先将日志文件中所有 IP 读入一个 list, 然后将 IP 和次数统计入一个 dict, 最后输出次数最大的 IP 及次数。</p>
+
+<pre><code>li = []
+
+with open('/var/log/nginx/access.log') as f:
+    for line in f:
+        li.append(line.split(' ')[0])
+
+dic = {}
+
+for element in li: 
+    dic[element] = dic.get(element, 0) + 1 
+#print(map.items())
+print [(k, v) for k, v in dic.iteritems() if v == max(dic.values())]
+</code></pre>
+
+<p>会将所有次数最大的 IP 和次数输出，避免了思路二的问题。</p>
+
+<h2>4.SEE ALSO</h2>
+
+<ul>
+<li><a href="http://kodango.me/simple-bash-programming-skills">简洁的bash编程技巧</a></li>
+<li><a href="http://cyr520.blog.51cto.com/714067/768707">找出apache日志中访问量最大的IP</a></li>
+<li><a href="http://hi.baidu.com/jimmy1029/item/2cebc59f7f8498b4cd80e530">找出list中重复最多的N个元素（Python v2.6）</a></li>
+<li><a href="http://www.stackenqueue.com/questions/761/python-%E5%BE%97%E5%88%B0%E4%B8%80%E4%B8%AAlist%E4%B8%AD%E5%85%83%E7%B4%A0%E9%87%8D%E5%A4%8D%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0">python 得到一个list中元素重复出现的次数</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Virtualenv Wrapper and Pip]]></title>
@@ -239,8 +339,8 @@ I follow the official docs
 <a href="http://octopress.org/docs/configuring/">config</a>
 <a href="http://octopress.org/docs/blogging/">blogging</a><br/>
 and the other two blogs:
-<a href="http://jokry.com/blog/2012/03/08/octopress/">jokry.com</a>
-<a href="http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/">blog.javachen.com</a></p>
+<a href="http://jokry.com/2012/03/08/octopress/">Octopress介绍与安装</a>
+<a href="http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/">使用Octopress将博客从wordpress迁移到GitHub上</a></p>
 
 <p>The following command is in common use(in the project root directory):</p>
 
