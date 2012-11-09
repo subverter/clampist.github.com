@@ -13,8 +13,8 @@ I follow the official docs
 [config](http://octopress.org/docs/configuring/)
 [blogging](http://octopress.org/docs/blogging/)  
 and the other two blogs:
-[jokry.com](http://jokry.com/blog/2012/03/08/octopress/)
-[blog.javachen.com](http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/)
+[Octopress介绍与安装](http://jokry.com/2012/03/08/octopress/)
+[使用Octopress将博客从wordpress迁移到GitHub上](http://blog.javachen.com/2012/06/migrate-blog-form-wordpress-to-github-with-octopress/)
 
 The following command is in common use(in the project root directory):
 
